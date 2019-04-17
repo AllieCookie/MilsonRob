@@ -49,7 +49,6 @@ public class GrapheMap {
 	public List<Elements> getAllElemments(){
 		
 		ArrayList<Elements> al = new ArrayList<Elements>();
-		graphe = new HashMap<Elements, HashMap<String, Elements>>();
 		int ordMax = carte.getOrdonnees();
 		int absMax = carte.getAbscisses();
 		Elements e;
@@ -116,6 +115,18 @@ public class GrapheMap {
 	//Renvoie une hashmap qui associe pour chaque direction un voisin de e
 	public HashMap<String, Elements> getVoisins(Elements e) {
 		return graphe.get(e);
+	}
+	
+	public ArrayList<Elements> getVoisinsArray(Elements e) {
+		HashMap<String, Elements> he = getVoisins(e);
+		ArrayList<Elements> al = new ArrayList<Elements>();
+			
+		Set<String> keyList = he.keySet();
+		for(String s : keyList) {
+			al.add(he.get(s));
+
+		}
+		return al;
 	}
 	
 	//Renvoie une hashmap qui associe pour chaque direction un voisin de e orienter par rapport a la case ou se trouvait le robot avant (voisin de e)

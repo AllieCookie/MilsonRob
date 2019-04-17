@@ -111,7 +111,8 @@ public class TestsCarte {
 		Elements pred = null;
 		Elements e = map.GetAt(0, 0);
 		Elements olde;
-		
+		System.out.println("a"+gm.getVoisins(e));
+		System.out.println("b"+gm.getVoisinsArray(e));
 		for(int i=0;i<10;i++) {
 			System.out.println("\nETAPE "+i+": Courant: "+e+" Pred:"+pred);
 			
@@ -126,8 +127,11 @@ public class TestsCarte {
 			}
 
 		}
-		
+		e = map.GetAt(0, 0);
+
 		System.out.println("-- FIN TEST BOUCLE PRED--\n");
+		System.out.println("a"+gm.getVoisins(e));
+		System.out.println("b"+gm.getVoisinsArray(e));
 		
 		
 	}
@@ -146,7 +150,8 @@ public class TestsCarte {
 		Elements e = map.GetAt(0, 0);
 		Elements olde;
 		String s = "s";
-		
+		System.out.println("a"+gm.getVoisins(e));
+		System.out.println("b"+gm.getVoisinsArray(e));
 		for(int i=0;i<10;i++) {
 			System.out.println("\nETAPE "+i+": Courant: "+e+" Orient:"+s+" Pred:"+pred);
 			if(gm.deplacementPossibleWithOrient(e, "r", s)) {
@@ -164,7 +169,11 @@ public class TestsCarte {
 		
 		System.out.println("-- FIN TEST BOUCLE ORIENT --\n");
 		System.out.println(gm.getAllElemments());
-		
+		e = map.GetAt(0, 0);
+		System.out.println("a"+gm.getVoisins(e));
+		System.out.println("b"+gm.getVoisinsArray(e));
+
+
 		
 	}
 	
